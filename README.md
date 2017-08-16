@@ -1,7 +1,7 @@
 ## This is a combination of work of two previous projects
 
-https://github.com/signalsciences/building-lua-nginx-module
-https://github.com/dacoburn/SigSciAgentApacheAlpine
+**https://github.com/signalsciences/building-lua-nginx-module**
+**https://github.com/dacoburn/SigSciAgentApacheAlpine**
 
 ## Signal Sciences Docker Configuration - Alpine with Nginx 1.10
 
