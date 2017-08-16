@@ -21,7 +21,6 @@ RUN set -ex \
   && update-ca-certificates \
   && addgroup -S nginx \
   && adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx \
-  #&& wget -nv -O ${tmpdir}/checksec https://raw.githubusercontent.com/slimm609/checksec.sh/master/checksec \
   && wget -nv -O LuaJIT-${LUAJIT}.tar.gz https://luajit.org/download/LuaJIT-${LUAJIT}.tar.gz \
   && wget -nv -O nginx-${NGINX_VERSION}.tar.gz https://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz \
   && wget -nv -O lua-nginx-module-${NGINX_LUA}.tar.gz https://github.com/openresty/lua-nginx-module/archive/v${NGINX_LUA}.tar.gz \
