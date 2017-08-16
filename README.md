@@ -1,4 +1,8 @@
-## Expansion of work by http://dgithub.com/dacoburn
+## This is a combination of work of two previous projects
+
+https://github.com/signalsciences/building-lua-nginx-module
+https://github.com/dacoburn/SigSciAgentApacheAlpine
+
 ## Signal Sciences Docker Configuration - Alpine with Nginx 1.10
 
 This is a dockerized agent with the SigSci Module and nginx. This container is set up to take environment variables for the Access Key and Secret Key. You can use a pre-built container or build your own. When building and deploying I tend to use the agent version followed by the SigSci module version for the tag.
