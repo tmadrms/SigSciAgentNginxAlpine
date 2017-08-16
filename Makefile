@@ -19,3 +19,8 @@ run:
 
 deploy:
 	docker push $(DOCKERUSER)/$(DOCKERNAME):$(DOCKERTAG)
+
+clean:
+	docker kill $(DOCKERNAME)
+	docker rm $(DOCKERNAME)
+	docker rmi $(DOCKERNAME)/$(DOCKERNAME):$(DOCKERTAG)
