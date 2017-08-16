@@ -1,0 +1,21 @@
+DOCKERUSER?=sigsci
+DOCKERNAME?=sigsci-alpine-nginx
+DOCKERTAG?=latest
+SIGSCI_ACCESSKEYID?=SETME
+SIGSCI_SECRETACCESSKEY?=SETME
+SIGSCI_HOSTNAME?=alpine35
+DOCKERMOUNT?="/var/run/sigsci/agent.sock"
+
+build:
+	./getAgent.sh
+	docker build -t $(DOCKERUSER)/$(DOCKERNAME):$(DOCKERTAG) .
+
+build-no-cache:
+	./getAgent.sh
+	docker build --no-cache -t $(DOCKERUSER)/$(DOCKERNAME):$(DOCKERTAG) .
+
+run:
+	docker run -p 8080:8080 --name $(DOCKERNAME) -d -e SIGSCI_HOSTNAME=$(SIGSCI_HOSTNAME)  -e SIGSCI_ACCESSKEYID=$(SIGSCI_ACCESSKEYID) -e SIGSCI_SECRETACCESSKEY=$(SIGSCI_SECRETACCESSKEY) $(DOCKERUSER)/$(DOCKERNAME):$(DOCKERTAG)
+
+deploy:
+	docker push $(DOCKERUSER)/$(DOCKERNAME):$(DOCKERTAG)
